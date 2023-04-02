@@ -1,30 +1,17 @@
 <?php
-// Check for form submission
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-	// Get form data
-	$name = $_POST['name'];
-	$email = $_POST['email'];
-	$message = $_POST['message'];
+  $name = $_POST['name'];
+  $email = $_POST['email'];
+  $subject = $_POST['subject'];
+  $message = $_POST['message'];
 
-	// Validate form data
-	if (empty($name) || empty($email) || empty($message)) {
-		echo 'Please fill out all fields.';
-		exit;
-	}
+  $to = 'youremail@example.com';
+  $headers = "From: $name <$email>" . "\r\n" .
+             "Reply-To: $email" . "\r\n" .
+             "X-Mailer: PHP/" . phpversion();
 
-	// Create email headers
-	$headers = 'From: '.$name.' <'.$email.'>'."\r\n".'Reply-To: '.$email."\r\n".'X-Mailer: PHP/'.phpversion();
+  mail($to, $subject, $message, $headers);
 
-	// Send email
-	$to = 'your@email.com'; // Replace with your email address
-	$subject = 'New Contact Form Submission';
-	$body = $message;
-	if (mail($to, $subject, $body, $headers)) {
-		echo 'Message sent successfully!';
-	} else {
-		echo 'An error occurred. Please try again later.';
-	}
-} else {
-	echo 'Invalid request.';
+  echo "Thank you for your message!";
 }
 ?>
