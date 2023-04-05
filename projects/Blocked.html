@@ -58,56 +58,52 @@
 						</header>
                     </article><br>
                     <section>
-						<div class="table-wrapper" align="justify">
+						<div class="table-wrapper" align="left">
 							<table>
 								<tbody>
 									<tr>
 										<td>Introduction</td>
-										<td>Our proposed program is motivated by an engineering problem that we
-											 are facing in the Mechanical and Artificial Intelligence Lab (MAIL),
-											  where we are working on additive manufacturing using a drone. For 
-											  the project, we are planning to have the drone assemble structures 
-											  out of pre-manufactured (through 3D printing) building blocks. 
-											  However, in order to do this, we need to have a way of taking the 
-											  goal structure (in the form of an STL file) and figuring out how 
-											  best to build it out of a set of predefined blocks. <br>
+										<td>Our program is motivated by an engineering problem that we
+											are facing in the Mechanical and Artificial Intelligence Lab (MAIL),
+											where we are working on additive manufacturing using a drone. For 
+											the project, we are planning to have the drone assemble structures 
+											out of pre-manufactured (through 3D printing) building blocks. 
+											However, in order to do this, we need to have a way of taking the 
+											goal structure (in the form of an STL file) and figuring out how 
+											best to build it out of a set of predefined blocks. <br><br>
 
 											To achieve this goal, the proposed program seeks to convert 
 											an STL file into instructions for building it using blocks. 
 											The program plays a similar role to a 3D printer’s slicer program,
-											 which converts a 3D model into instructions for the printer to 
-											 follow. This program is not limited to the specific application 
-											 of drone additive manufacturing but can also be useful for building
-											  any structure out of smaller units.
-											</td>
+											which converts a 3D model into instructions for the printer to 
+											follow. This program is not limited to the specific application 
+											of drone additive manufacturing but can also be useful for building
+											any structure out of smaller units.
+										</td>
 									</tr>
 									<tr>
-
+										<td>Methods</td>
+										<td>Our proposed program will input an STL provided by the user and convert it 
+											to a block structure. At its simplest, the block structure will include 1x1
+											bricks. For a more complex implementation, the graphical user interface 
+											(GUI) will also allow the user to select what other block types and dimensions
+											they wish to include in the final model (e.g. 2x4 bricks, 1x3 plates, etc.)
+											<br><br>Once the block structure is complete, the user will have an option to run a 
+											structural stability analysis. This provides the user with a rating of how stable 
+											the object is in the input orientation. The program will also output a bill of 
+											materials (BOM) including each type of block and the quantity required. 
+											The BOM will also include the amount of filament required to print each. Lastly, 
+											the program will provide the user with layer wise steps of how the model is built 
+											from the base up.  
+										</td>
 									</tr>
 									<tr>
-										<td>Item Two</td>
-										<td>Vis ac commodo adipiscing arcu aliquet.</td>
+										<td>Status</td>
+										<td>This project is still in progress.</td>
 									</tr>
 									<tr>
-
-									</tr>
-									<tr>
-										<td>Item Three</td>
-										<td> Morbi faucibus arcu accumsan lorem.</td>
-									</tr>
-									<tr>
-
-									</tr>
-									<tr>
-										<td>Item Four</td>
-										<td>Vitae integer tempus condimentum.</td>
-									</tr>
-									<tr>
-
-									</tr>
-									<tr>
-										<td>Item Five</td>
-										<td>Ante turpis integer aliquet porttitor.</td>
+										<td>Application Link</td>
+										<td>A link to the game repository can be found <a href="https://github.com/cgeshan/Blocked" target="_blank" >here:</a></td>
 									</tr>
 								</tbody>
 								
@@ -117,9 +113,6 @@
 
 						<!-- Footer -->
 						<footer id="footer">
-							<p class="copyright">
-								My apologies, this site is still under construction and will be completed by April 1, 2023
-							</p>
 							<ul class="icons">
 								<li><a href="https://linkedin.com/in/connorgeshan" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
 								<li> | </li>

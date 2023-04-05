@@ -52,13 +52,16 @@
 					<article id="banner">
 						<header>
 							<h2>Automated short answer grading system for teachers</h2>
-                            <span class="image">
-                                <img src="../images/AutoGrader.png" alt="" />
-                            </span>
+							<div class="box alt">
+								<div class="row gtr-50 gtr-uniform">
+									<div class="col-6"><span class="image fit"><img src="../images/autograder_demo.gif" alt="" /></span></div>
+									<div class="col-6"><span class="image fit"><img src="../images/autograder-results.png" alt="" /></span></div>	
+								</div>
+							</div>
 						</header>
                     </article><br>
                     <section>
-						<div class="table-wrapper" align="justify">
+						<div class="table-wrapper" align="left">
 							<table>
 								<tbody>
 									<tr>
@@ -66,46 +69,139 @@
 									</tr>
 									<tr>
 										<td>Introduction</td>
-										<td>We are designing a biomimetic soft jellyfish robot to 
-											observe whether limiting anthropogenic vibrations caused 
-											by underwater observation robots will be less  
-											disturbing to seafloor marine life. To limit these vibrations,
-											 we will not use a motor to facilitate motion. Instead we are 
-											 implementing an electromagnet to actuate several 3-bar 
-											 linkages to cause jellyfish-like motion.
+										<td>Great strides are now being made in the world of 
+											artificial intelligence toward the automation of 
+											tedious tasks, reducing human workloads across a 
+											ariety of fields and industries. The workload of 
+											our educators is one that desperately needs a 
+											reduction, as they are overworked and understaffed. 
+											We interviewed several schoolteachers to gather data 
+											on their preferences, and conceptualized various 
+											solutions to the problem. As such, in this work we 
+											plan to develop a user-friendly intelligent tool that 
+											reduces the workload of teachers.  Our tool’s chosen 
+											concept involves the use of natural language processing 
+											to grade short form answer assignments.
 											
 										</td>
 									</tr>
 									<tr>
+										<td>Methods</td>
+										<td>We offer a fun and interactive game as a way to teach children these 
+											important typing skills. Our game will feature the following major 
+											components:<br>
+											<ol>
+												<li>Design Process:
+													<ul>
+														During the design process of our product, we 
+														made many changes to improve its accuracy, 
+														reliability and ease of use. We created three 
+														prototypes, each with improvements and changes 
+														made based on testing and feedback.
+														
+													</ul>
+												</li>
+												<li>Handwriting to text functionality:
+													<ul>
+														The first part of our pipeline was our Handwriting 
+														to Text function. We attempted two methods: Object 
+														Detection and the pre-trained TrOCR model. The Object 
+														Detection method was not robust enough for sentences or 
+														multi-word answers, while the TrOCR model resulted in 
+														nearly perfect accuracy. The TrOCR model was trained 
+														using the IAM handwriting dataset and was able to 
+														properly convert entire sentences from handwriting to 
+														text.
 
+													</ul>
+												</li>
+												<li>OpenCV implementation:
+													<ul>
+														For the third round of prototyping, we implemented a 
+														requirement for single-line responses for demonstration 
+														urposes. We utilized the OpenCV library to extract 
+														handwritten answers from the submitted documents. This 
+														method is currently limited in that it only applies 
+														to a very specific format with five answers.
+
+													</ul>
+												</li>
+												<li>GUI design:
+													<ul>
+														We built our GUI in Streamlit and implemented a multi-page 
+														format. The user can advance to the next stage of the process 
+														after certain quotas are filled, at which point the "Continue"
+														button becomes available. There is also a "reset" button in 
+														case the user decides to start over from the beginning. The app 
+														first asks the user to input the number of questions they are 
+														grading, after which the app presents a number of text input 
+														boxes equivalent to the number of questions given by the user, 
+														into which the user enters the correct answers for the assignment.
+
+													</ul>
+												</li>
+												<li>Evaluation function:
+													<ul>
+														Our evaluation function uses Sent2Vec, a Python NLP library 
+														for sentence embedding. Sent2Vec uses a trained DistilBERT 
+														Base language model and the Word2Vec method to encode sentences 
+														into vectors of words. Sent2Vec sums the word vectors for each 
+														sentence to obtain a vectorization of the complete sentence. From 
+														there, the semantic similarity between two sentence vectors can 
+														then be calculated using cosine similarity. Our solution compares 
+														the "semantic distance" between the correct answer provided by the 
+														teacher and each student's answer. This "distance" value was 
+														converted into a grade using a manually-tuned gain. The score is 
+														then clipped to prevent negative scores from occurring.
+
+													</ul>
+												</li>
+											</ol>	
+										</td>
 									</tr>
 									<tr>
-										<td>Item Two</td>
-										<td>Vis ac commodo adipiscing arcu aliquet.</td>
+										<td>Results</td>
+										<td> Our machine learning pipeline for grading short answer questions was successfully 
+											developed and tested through multiple prototypes. We were able to achieve high 
+											accuracy in converting handwriting to text using the pre-trained TrOCR model, which 
+											resulted in a nearly perfect accuracy for our purposes. We also tested the robustness 
+											of the model by examining longer phrases and messier handwriting, and found that 
+											snipping the answers line by line improved the model's accuracy. <br><br>
+
+											The final version of our app successfully allowed teachers to upload a CSV file 
+											containing their answer key, eliminating the need to type in the answers again 
+											after every reset. The app also allowed teachers to upload a ZIP file containing the 
+											class’ scanned assignments as individual PDFs, which were segmented and converted 
+											to text format using OCR. <br><br>
+											
+											Our evaluation function successfully compared the “semantic distance” between the 
+											correct answer provided by the teacher and each student’s answer, and converted the 
+											“distance” value into a grade using a manually tuned gain. The grade was then clipped 
+											to prevent negative scores from occurring. We tested the app on a sample dataset of 
+											short answer questions from a high school history exam, and found that the app was 
+											able to accurately grade each student's answer within minutes.<br><br>
+											
+											Overall, our intelligent tool successfully reduced the workload of teachers 
+											by automating the grading of short answer questions, saving teachers hours each 
+											week in grading. This tool has the potential to revolutionize the field of education 
+											by allowing teachers to focus on more important tasks, such as lesson planning and 
+											providing individualized support to students.
+										</td>
 									</tr>
 									<tr>
-										
-									</tr>
-									<tr>
-										<td>Item Three</td>
-										<td> Morbi faucibus arcu accumsan lorem.</td>
-									</tr>
-									<tr>
-										
-									</tr>
-									<tr>
-										<td>Item Four</td>
-										<td>Vitae integer tempus condimentum.</td>
-									</tr>
-									<tr>
-										
-									</tr>
-									<tr>
-										<td>Item Five</td>
-										<td>Ante turpis integer aliquet porttitor.</td>
-									</tr>
-									<tr>
-										
+										<td>Discussion</td>
+										<td>The development of our intelligent tool that automates the grading of short answer 
+											questions is a significant step towards easing the workload of educators, who are 
+											often overworked and understaffed. The results of our product, which enables
+											teachers to upload pictures of their students' short answer questions and receive 
+											a grade in minutes, are promising. Our machine learning pipeline can read each 
+											student’s picture, convert the handwriting to text, and then grade each answer 
+											by comparing it to the answer key that the teacher uploaded. Our product can automatically 
+											analyze an entire class’s homework and then present a list of the student’s name and 
+											their grade, thus saving teachers hours each week in grading.<br><br>
+
+
+										</td>
 									</tr>
 								</tbody>
 							</table>
@@ -114,9 +210,6 @@
 
 						<!-- Footer -->
 						<footer id="footer">
-							<p class="copyright">
-								My apologies, this site is still under construction and will be completed by April 1, 2023
-							</p>
 							<ul class="icons">
 								<li><a href="https://linkedin.com/in/connorgeshan" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
 								<li> | </li>
