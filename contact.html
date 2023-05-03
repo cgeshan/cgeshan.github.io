@@ -1,5 +1,3 @@
-<?php include 'sentmail.php';?>
-
 <!DOCTYPE HTML>
 <!--
 	Spectral by HTML5 UP
@@ -31,7 +29,28 @@
 										<li><a href="index.html">Home</a></li>
 										<li><a href="about.html">About Me</a></li>
 										<li><a href="resume.html">Resume</a></li>
-										<li><a href="projects.html">Projects</a></li>
+										<li class="dropdown">
+											<label for="projects-toggle" class="toggle-label">
+												Projects <span class="arrow"></span>
+											</label>
+											<input type="checkbox" id="projects-toggle">
+											<ul>
+												<li><a href="projects.html">&nbsp;&nbsp;All Projects</a></li>
+												<li><a href="projects/AlphabetAstronauts.html">&nbsp;&nbsp;Alphabet Astronauts</a></li>
+												<li><a href="projects/AutoGrader.html">&nbsp;&nbsp;Auto Grader</a></li>
+												<li><a href="projects/Blocked.html">&nbsp;&nbsp;Blocked</a></li>
+												<li><a href="projects/Jelly.html">&nbsp;&nbsp;GHOST Jelly</a></li>
+												<li><a href="projects/GC3.html">&nbsp;&nbsp;Humanoid Robotics</a></li>
+												<li><a href="projects/roxie.html">&nbsp;&nbsp;Roxie</a></li>
+												<li><a href="projects/SpaceRobotics.html">&nbsp;&nbsp;Space Robotics</a></li>
+												<li><a href=""></a></li>
+												<li><a href="projects/backyard.html">&nbsp;&nbsp;Backyard Remodel</a></li>
+												<li><a href="projects/bar.html">&nbsp;&nbsp;Bar</a></li>
+												<li><a href="projects/PC.html">&nbsp;&nbsp;Custom PC</a></li>
+												<li><a href="projects/Deck.html">&nbsp;&nbsp;Deck</a></li>
+												<li><a href="projects/Jeep.html">&nbsp;&nbsp;Jeep</a></li>
+											  </ul>
+										</li>
 										<li><a href="contact.html">Connect With Me</a></li>
 									</ul>
 								</div>
@@ -42,41 +61,29 @@
 
 				<!-- Main -->
 					<article id="main">
-						<header>
-							<p>
-								Academic: <a href="mailto:cgeshan@andrew.cmu.edu">cgeshan@andrew.cmu.edu</a><br>
-								Personal: <a href="mailto:connorgeshan@gmail.com">connorgeshan@gmail.com</a><br>
-								<br>
-								Github: <a href="https://github.com/cgeshan" target="_blank"> github.com/cgeshan</a><br>
-								LinkedIn: <a href="https://linkedin.com/in/connorgeshan" target="_blank"> linkedin.com/in/connorgeshan</a>
-								
-							</p>
-						</header>
-						<!-- <section class="wrapper style5">
+						<section class="wrapper style5">
 							<div class="inner">
 								<section>
 									<h4>Form</h4>
 									<form method="post" action="mailto:connorgeshan@gmail.com">
 										<div class="row gtr-uniform">
-											<div class="col-6 col-12-xsmall">
-												<input type="text" name="name" id="name" value="" placeholder="Name" />
-											</div>
-											<div class="col-6 col-12-xsmall">
-												<input type="email" name="email" id="email" value="" placeholder="Email" />
+											<div class="col-12">
+												<input type="text" name="name" id="name" value="" placeholder="Name" required />
 											</div>
 											<div class="col-12">
-												<select name="subject" id="subject">
+												<select name="subject" id="subject" required>
 													<option value="">- Subject -</option>
 													<option value="Employment">Employment</option>
 													<option value="Meeting Request">Meeting Request</option>
 													<option value="Personal">Personal</option>
+													<option value="Other">Other</option>
 												</select>
 											<div class="col-6 col-12-small"><br />
-												<input type="checkbox" id="demo-human" name="demo-human" unchecked>
+												<input type="checkbox" id="demo-human" name="demo-human" unchecked required>
 												<label for="demo-human">Not a robot</label>
 											</div>
 											<div class="col-12">
-												<textarea name="message" id="message" placeholder="Enter your message" rows="6"></textarea>
+												<textarea name="message" id="message" placeholder="Enter your message" rows="6" required></textarea>
 											</div><br />
 											<div class="col-12">
 												<ul class="actions">
@@ -88,7 +95,7 @@
 									</form>
 								</section>
 							</div>
-						</section> -->
+						</section>
 					</article>
 
 				<!-- Footer -->
@@ -116,5 +123,18 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
+		<!-- Email handling-->
+		<script>
+			const form = document.querySelector('form');
+			form.addEventListener('submit', function(event) {
+			  event.preventDefault();
+			  const name = document.getElementById('name').value;
+			  const subject = document.getElementById('subject').value;
+			  const message = document.getElementById('message').value;
+			  const recipient = 'connorgeshan@gmail.com';
+			  const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\n\nMessage:\n ${message}`)}`;
+			  window.location.href = mailtoLink;
+			});
+		</script>					
 	</body>
 </html>

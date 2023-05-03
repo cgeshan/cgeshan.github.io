@@ -2858,7 +2858,6 @@ input, select, textarea {
 					left: 0;
 					width: 100%;
 					height: 100%;
-					background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cstyle%3Eline %7B stroke-width: 0.25px%3B stroke: %23ffffff%3B %7D%3C/style%3E%3Cline x1='0' y1='0' x2='100' y2='100' /%3E%3Cline x1='100' y1='0' x2='0' y2='100' /%3E%3C/svg%3E");
 					background-position: center;
 					background-repeat: no-repeat;
 					background-size: 100% 100%;
@@ -4170,6 +4169,95 @@ input, select, textarea {
 		background-attachment: scroll;
 	}
 
+/* Drop down menu */
+/* Drop down menu */
+
+/* Hide the sub-menu by default */
+.dropdown input[type="checkbox"] + ul {
+    display: none;
+}
+
+/* Style the sub-menu links */
+.dropdown ul li {
+    display: block;
+}
+
+.dropdown ul ul li {
+    margin-left: 1.5em; /* change the margin to adjust the indent */
+}
+
+/* Style the parent label */
+.dropdown label.toggle-label {
+    display: flex;
+    font-weight: normal;
+    align-items: center;
+    font-size: 0.8em;
+    letter-spacing: 0.225em;
+    padding: 0;
+    text-transform: uppercase;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Style the parent label when the sub-menu is visible */
+.dropdown input[type="checkbox"]:checked + ul {
+    display: block;
+}
+
+.dropdown input[type="checkbox"]:checked + label.toggle-label {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Hide the "Projects" label */
+.dropdown input[type="checkbox"]#projects-toggle {
+    display: none;
+}
+
+/* Show the "Projects" label when the checkbox is unchecked */
+.dropdown input[type="checkbox"]#projects-toggle:not(:checked) + label.toggle-label {
+    display: flex;
+}
+
+/* Style the arrow icon */
+.arrow {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 0.5em;
+    border-style:inset;
+    border-width: 0.5em 0.5em 0 0.5em;
+    border-color: #fff transparent transparent transparent;
+    transform: rotate(-45deg);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Rotate the arrow when the sub-menu is visible */
+.dropdown input[type="checkbox"]:checked + label.toggle-label .arrow {
+    transform: rotate(-225deg);
+}
+
+/* Rotate the arrow back to its original orientation when the sub-menu is hidden */
+.dropdown input[type="checkbox"] + label.toggle-label .arrow {
+    transform: rotate(-45deg);
+}
+
+/* Style the arrow icon on hover */
+.toggle-label:hover .arrow {
+    transform: rotate(-225deg);
+}
+
+/* Show the sub-menu on hover */
+.dropdown:hover input[type="checkbox"] + ul {
+    display: block;
+}
+
+/* Keep the sub-menu visible when the mouse is over it */
+.dropdown ul:hover {
+    display: block;
+}
+
+	
 /* Footer */
 
 	#footer {
