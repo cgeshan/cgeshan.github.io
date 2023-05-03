@@ -125,13 +125,126 @@ input, select, textarea {
 			}
 
 		}
-
+			  
 		@media screen and (max-width: 736px) {
-
+			/* Modify rules for mobile devices */
 			body, input, select, textarea {
 				font-size: 11pt;
 				letter-spacing: 0.0375em;
 			}
+			
+			h2 {
+				font-size: 1.1em;
+				line-height: 1.65em;
+			}
+			
+			h3 {
+				font-size: 1em;
+				line-height: 1.65em;
+			}
+			
+			/* Add rules for mobile devices */
+			#header {
+				padding: 1em;
+			}
+			
+			#menu {
+				display: none;
+			}
+			
+			#menuToggle {
+				display: block;
+				position: relative;
+				z-index: 1;
+			}
+			
+			#menuToggle input {
+				display: block;
+				width: 40px;
+				height: 32px;
+				position: absolute;
+				top: -7px;
+				left: -5px;
+				cursor: pointer;
+				opacity: 0; /* hide the original checkbox */
+				z-index: 2;
+				-webkit-touch-callout: none;
+			}
+			
+			#menuToggle span {
+				display: block;
+				width: 33px;
+				height: 4px;
+				margin-bottom: 5px;
+				position: relative;
+				background: #fff;
+				border-radius: 3px;
+				z-index: 1;
+				transform-origin: 4px 0px;
+				transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+				background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+				opacity 0.55s ease;
+			}
+			
+			#menuToggle span:first-child {
+				transform-origin: 0% 0%;
+			}
+			
+			#menuToggle span:nth-last-child(2) {
+				transform-origin: 0% 100%;
+			}
+			
+			#menuToggle input:checked ~ span {
+				opacity: 1;
+				transform: rotate(45deg) translate(-2px, -1px);
+				background: #fff;
+			}
+			
+			#menuToggle input:checked ~ span:nth-last-child(3) {
+				opacity: 0;
+				transform: rotate(0deg) scale(0.2, 0.2);
+			}
+			
+			#menuToggle input:checked ~ span:nth-last-child(2) {
+				transform: rotate(-45deg) translate(0, -1px);
+			}
+			
+			#menuToggle input:checked ~ ul {
+				transform: none;
+			}
+			
+			#menu ul {
+				position: absolute;
+				top: 40px;
+				right: 0;
+				width: 200px;
+				transform-origin: 0% 0%;
+				transform: translate(100%,0);
+				padding: 0;
+				margin: 0;
+				list-style: none;
+				background-color: #333;
+				text-align: right;
+				transition: transform 0.5s ease-in-out;
+				}
+				
+				#menu ul li {
+				margin: 0;
+				padding: 0;
+				display: block;
+				position: relative;
+				transition: background-color 0.5s ease-in-out;
+				}
+				
+				#menu ul li a {
+				display: block;
+				padding: 10px 20px;
+				color: #fff;
+				font-size: 18px;
+				text-decoration: none;
+				text-transform: uppercase;
+				}
+			  
 
 		}
 
