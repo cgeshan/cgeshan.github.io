@@ -283,6 +283,31 @@ input, select, textarea {
 	.align-right {
 		text-align: right;
 	}
+	figcaption {
+		text-align: center;
+	}
+	.custom-indent {
+		margin-left: 15px;
+	}
+
+/* Style the video player controls */  
+  video::-webkit-media-controls-play-button {
+	background-color: white;
+	border: none;
+	border-radius: 50%;
+	height: 50px;
+	width: 50px;
+  }
+  
+  /* Style the video */
+  video {
+	width: 60%;
+	height: auto;
+	border-radius: 5px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+	margin: 50% auto;
+  }
+  
 
 /* Row */
 
@@ -2116,6 +2141,10 @@ input, select, textarea {
 		.image.right {
 			float: right;
 			margin: 0 0 2em 2em;
+			top: 0.25em;
+		}
+		.image.center {
+			margin: auto;
 			top: 0.25em;
 		}
 
