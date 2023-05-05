@@ -84,6 +84,7 @@
 													<option value="Personal">Personal</option>
 													<option value="Other">Other</option>
 												</select>
+											</div>
 											<div class="col-6 col-12-small"><br />
 												<input type="checkbox" id="demo-human" name="demo-human" unchecked required>
 												<label for="demo-human">Not a robot</label>
@@ -98,7 +99,7 @@
 												</ul>
 											</div>
 										</div>
-									</form>
+									</form>									
 								</section>
 							</div>
 						</section>
@@ -114,7 +115,7 @@
 						<li><a href="contact.html" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
 					</ul>
 					<ul class="copyright">
-						<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						<li>&copy; Connor Geshan</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 					</ul>
 				</footer>
 
@@ -128,19 +129,6 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
-		<!-- Email handling-->
-		<script>
-			const form = document.querySelector('form');
-			form.addEventListener('submit', function(event) {
-			  event.preventDefault();
-			  const name = document.getElementById('name').value;
-			  const subject = document.getElementById('subject').value;
-			  const message = document.getElementById('message').value;
-			  const recipient = 'connorgeshan@gmail.com';
-			  const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\n\nMessage:\n ${message}`)}`;
-			  window.location.href = mailtoLink;
-			});
 		</script>					
 	</body>
 </html>
