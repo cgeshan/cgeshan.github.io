@@ -64,64 +64,138 @@
 						<header>
 							<h2>Attempted a VR solution to grand challenge: Multimodal Synchronization of Humanoids</h2>
                             <span class="image">
-                                <img src="../images/MH GC3.png" alt=""  style="width: 100%;" />
+                                <img src="../images/MH GC3.jpeg" alt=""  style="width: 100%;" />
                             </span>
 						</header>
                     </article><br>
-                    <!-- <section>
-						<div class="table-wrapper" align="justify">
+                    <section>
+						<div class="table-wrapper" align="left">
 							<table>
 								<tbody>
 									<tr>
+										<tr>
+											<td>Introduction</td>
+											<td>This course project was focused on solving a humanoid robotics grand challenge. Our group chose to attempt to solve
+												the synchronization of multimodal behaivors. Our task was to create a simulated humanoid and allow it to freely interact
+												with a human user in VR. We created an environment in Unreal Engine 5 and our humanoid was designed with MetaHuman. 
+												<br><br> My roles on this project were:
+												<ul class="custom-indent">
+													<li>Unreal Engine 5 environment design</li>
+													<li>Metahuman design</li>
+													<li>Incorporating chatGPT with our MetaHuman for speech capabilities</li>
+													<li>MetaHuman motion targeting in Unreal Engine 5</li>
+													<li>Abstracting room attributes for less of a 'hard coded' solution</li>
+													
+												</ul>
+												More details about the project are below.
+											</td>
+										</tr>
+										<tr>
+											<td></td>
+										</tr>
+										<tr>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Motivation</td>
+											<td>One of the biggest current challenges for humanoid robot development
+												is conquering the Uncanny Valley. It is a phenomenon that robots' 
+												affinity decreases as it is becoming more and more like a human. Before 
+												solving this problem, we need to first conquer the problem of synchronizing the robot's 
+												multimodal behaviors since it is essential for information exchange between it and the 
+												user. To solve this grand challenge, we propose a solution that mainly uses neural 
+												networks that considers different scenarios. The method combines GPT3 (third-generation
+												Generative Pre-trained Transformer), predefined keywords trigger command, and Mixamo,
+												a database that uses motion-captured animations. Our final result allows the user to 
+												interact with the humanoid in Unreal Engine 5 and give it commands. The humanoid is 
+												able to execute these commands.
+											</td>
+										</tr>
+										<tr>
+											<td></td>
+										</tr>
+										<tr>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Methods</td>
+											<td>Our method requires a combination of six sub-steps, and each requires a different technique or software. 
+												The first step is to set up the environment, acquiring the coordinates of items. The second step is using 
+												a neural network to train the walking movement of the humanoid robot. The third step is using predefined 
+												action scripts to simulate the action of picking up the specified item. The fourth step is to combine 
+												walking with the action of picking things up, making the entire process smooth. The fifth step is to 
+												reconstruct the entire action in a VR environment, and the user (human) should be able to clearly see 
+												the action of the robot. The final step is to integrate GPT3 which allows the robot to verbally interact 
+												with the user.
+												<br><br>
+												<ul class="custom-indent">
+													<li>
+														The environment used for the project is AI2THOR, which is an open-source virtual environment 
+														for AI agents that simulates realistic 3D scenes. AI2THOR records the coordinates of each item, 
+														including the item being picked up, and these coordinates are then imported into Unreal Engine 
+														5 for further processing. The combination of these two tools allows for the creation of a highly 
+														detailed and realistic virtual environment for the robot to operate in.
+													</li><br>
+													<li>
+														To generate movement variants for the robot's walking, a neural network is used. This neural 
+														network is trained using data obtained from the DeepMimic database, which contains a vast array 
+														of motion-capture data. The neural network is trained to generate variations in walking patterns 
+														that are both efficient and safe for the robot to perform.
+													
+													</li><br>
+													<li>
+														To simulate the action of picking up the item, predefined action scripts are used. These scripts 
+														dictate the movements that the robot needs to perform to successfully pick up an object. The walking 
+														and picking actions are then combined for smooth execution, ensuring that the robot can move around 
+														the environment with ease and complete its tasks efficiently.
+													
+													</li><br>
+													<li>
+														The entire process is reconstructed in a virtual reality (VR) environment. This allows for a 
+														highly immersive and interactive experience, where the user can see the robot in action and 
+														even interact with it verbally. To enable verbal interaction, GPT-3 is integrated into the system. 
+														This powerful language model can be used to generate responses to user queries, allowing for a 
+														seamless and natural interaction between the user and the robot. Overall, the combination of these 
+														technologies creates a highly advanced and realistic simulation environment that is ideal for 
+														testing and training robotic systems.
 
-									</tr>
-									<tr>
-										<td>Introduction</td>
-										<td>We are designing a biomimetic soft jellyfish robot to 
-											observe whether limiting anthropogenic vibrations caused 
-											by underwater observation robots will be less  
-											disturbing to seafloor marine life. To limit these vibrations,
-											 we will not use a motor to facilitate motion. Instead we are 
-											 implementing an electromagnet to actuate several 3-bar 
-											 linkages to cause jellyfish-like motion.
-											
-										</td>
-									</tr>
-									<tr>
+													</li>
+												</ul>
+											</td>
+										</tr>
+										<tr>
+											<td></td>
+										</tr>
+										<tr>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Results</td>
+											<td>Our blueprint enables the user to chat and command our humanoid in Unreal Engine 5, providing 
+												a quick and accurate response from the robot, and making the user feel comfortable interacting 
+												with it. The integration of GPT3 provides a prompt response to user input, though response time 
+												may vary depending on the complexity of the question. Keyword-sensitive commands allow for accurate 
+												execution of predefined actions, and the robot can dynamically adjust its path to avoid obstacles. 
+												Each action is linked to a specific Mixamo action neural network for precise execution. However, 
+												the accuracy of GPT3's responses to commands may vary.<br><br>
 
-									</tr>
-									<tr>
-										<td>Item Two</td>
-										<td>Vis ac commodo adipiscing arcu aliquet.</td>
-									</tr>
-									<tr>
-										
-									</tr>
-									<tr>
-										<td>Item Three</td>
-										<td> Morbi faucibus arcu accumsan lorem.</td>
-									</tr>
-									<tr>
-										
-									</tr>
-									<tr>
-										<td>Item Four</td>
-										<td>Vitae integer tempus condimentum.</td>
-									</tr>
-									<tr>
-										
-									</tr>
-									<tr>
-										<td>Item Five</td>
-										<td>Ante turpis integer aliquet porttitor.</td>
-									</tr>
-									<tr>
-										
+												<div class="box alt">
+													<div class="row gtr-50 gtr-uniform">
+														<div class="col-12"><span class="image fit"><img src="../videos/GC3-Demo1.gif" alt=""  /></span>
+														<figcaption>Demonstration of trained Deep Mimic network</figcaption></div>
+													</div><br><br>
+													<div class="row gtr-50 gtr-uniform">
+														<div class="col-12"><span class="image fit"><img src="../videos/GC3-Demo2.gif" alt=""  /></span>
+														<figcaption>Linked MetaHuman body motion and facial motion matching speech</figcaption></div>
+													</div><br><br>
+												</div>
+											</td>
+										</tr>
 									</tr>
 								</tbody>
 							</table>
 						</div>
-					</section> -->
+					</section>
 
 						<!-- Footer -->
 						<footer id="footer">

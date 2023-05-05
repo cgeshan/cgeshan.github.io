@@ -291,7 +291,7 @@ input, select, textarea {
 	}
 
 /* Style the video player controls */  
-  video::-webkit-media-controls-play-button {
+  .video::-webkit-media-controls-play-button {
 	background-color: white;
 	border: none;
 	border-radius: 50%;
@@ -300,12 +300,18 @@ input, select, textarea {
   }
   
   /* Style the video */
-  video {
+  .video-small {
 	width: 60%;
 	height: auto;
 	border-radius: 5px;
 	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 	margin: 50% auto;
+  }
+
+  video {
+	display: block;
+	margin: 0 auto;
+	max-width: 75%;
   }
   
 
@@ -2165,6 +2171,18 @@ input, select, textarea {
 			.image.fit img {
 				width: 100%;
 			}
+
+/* Center image in section */	
+		.container {
+			display: flex;
+			justify-content: center;
+		}
+
+		.container img {
+			max-width: 75%;
+			display: block;
+			margin: 0 auto;
+		}
 
 /* List */
 
