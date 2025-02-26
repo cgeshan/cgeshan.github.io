@@ -36,7 +36,7 @@ jobs:
           source: ./ 
           destination: ./_site
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2  # Changed from v4 to v2
+        uses: actions/upload-pages-artifact@v2  # Ensure this is updated to the correct stable version, here v2.
 
   # Deployment job
   deploy:
